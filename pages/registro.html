@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoCare | Registro</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="../index.html">AutoCare</a>
+
+            <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
+                    aria-controls="menuPrincipal" aria-expanded="false"
+                    aria-label="Abrir menú">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menuPrincipal">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="acerca.html">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="servicios.html">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="registro.html">Registrarse</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Iniciar sesión</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-5">
+
+        <div class="form-container mx-auto">
+
+            <div class="text-center mb-4">
+                <h1 class="fw-bold">Crear una cuenta</h1>
+                <p class="text-secondary">
+                    Completa tus datos para registrarte en AutoCare.
+                </p>
+            </div>
+
+            <form id="formRegistro" novalidate>
+
+                <div class="mb-3">
+                    <label for="nombreRegistro" class="form-label">
+                        Nombres y apellidos
+                    </label>
+                    <input type="text" class="form-control"
+                           id="nombreRegistro" name="nombre"
+                           placeholder="Ej. Carlos Pérez"
+                           maxlength="60" autocomplete="name"
+                           required>
+                    <div class="invalid-feedback"></div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="cedulaRegistro" class="form-label">
+                        Cédula ecuatoriana
+                    </label>
+                    <input type="text" class="form-control"
+                           id="cedulaRegistro" name="cedula"
+                           placeholder="Ej. 1712345675"
+                           inputmode="numeric" maxlength="10"
+                           autocomplete="off" required>
+                    <div class="invalid-feedback"></div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="telefonoRegistro" class="form-label">
+                        Teléfono celular
+                    </label>
+                    <input type="tel" class="form-control"
+                           id="telefonoRegistro" name="telefono"
+                           placeholder="Ej. 0991234567"
+                           inputmode="numeric" maxlength="10"
+                           autocomplete="tel" required>
+                    <div class="invalid-feedback"></div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="correoRegistro" class="form-label">
+                        Correo electrónico
+                    </label>
+                    <input type="email" class="form-control"
+                           id="correoRegistro" name="correo"
+                           placeholder="ejemplo@correo.com"
+                           maxlength="100" autocomplete="email"
+                           required>
+                    <div class="invalid-feedback"></div>
+                </div>
+
+                <hr class="my-4">
+
+                <h2 class="h5 fw-bold mb-3">Datos de acceso</h2>
+
+                <div class="mb-3">
+                    <label for="usuarioRegistro" class="form-label">
+                        Nombre de usuario
+                    </label>
+                    <input type="text" class="form-control"
+                           id="usuarioRegistro" name="usuario"
+                           placeholder="Ej. carlos123"
+                           minlength="4" maxlength="20"
+                           autocomplete="username" required>
+                    <div class="invalid-feedback"></div>
+                    <small class="text-secondary">
+                        Utiliza entre 4 y 20 caracteres alfanuméricos o guion bajo.
+                    </small>
+                </div>
+
+                <div class="mb-3">
+                    <label for="contrasenaRegistro" class="form-label">
+                        Contraseña
+                    </label>
+                    <input type="password" class="form-control"
+                           id="contrasenaRegistro" name="contrasena"
+                           placeholder="Ingresa tu contraseña"
+                           minlength="4" maxlength="30"
+                           autocomplete="new-password" required>
+                    <div class="invalid-feedback"></div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="confirmarContrasena" class="form-label">
+                        Confirmar contraseña
+                    </label>
+                    <input type="password" class="form-control"
+                           id="confirmarContrasena"
+                           name="confirmarContrasena"
+                           placeholder="Repite tu contraseña"
+                           minlength="4" maxlength="30"
+                           autocomplete="new-password" required>
+                    <div class="invalid-feedback"></div>
+                </div>
+
+                <div class="form-check mb-3">
+                    <input type="checkbox" class="form-check-input"
+                           id="aceptaTerminos" name="aceptaTerminos"
+                           required>
+                    <label class="form-check-label" for="aceptaTerminos">
+                        Acepto los términos y condiciones.
+                    </label>
+                    <div class="invalid-feedback">
+                        Debes aceptar los términos y condiciones.
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100">
+                    Crear cuenta
+                </button>
+
+                <p class="text-center mt-4 mb-0">
+                    ¿Ya tienes una cuenta?
+                    <a href="login.html">Inicia sesión aquí</a>
+                </p>
+
+            </form>
+
+        </div>
+
+    </main>
+
+    <footer class="bg-dark text-white text-center py-3 mt-auto">
+        <p class="mb-0">
+            © 2026 AutoCare - Todos los derechos reservados.
+        </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.14.5/dist/sweetalert2.all.min.js"></script>
+    <script src="../js/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,639 @@
+:root {
+    --azul-oscuro: #142b4a;
+    --azul-principal: #1769aa;
+    --azul-claro: #eaf3fc;
+    --azul-hover: #10558d;
+    --blanco: #ffffff;
+    --gris-fondo: #f3f6fa;
+    --gris-texto: #64748b;
+    --gris-borde: #dce3ec;
+    --texto-principal: #273444;
+    --verde: #198754;
+    --rojo: #dc3545;
+    --amarillo: #ffc107;
+    --sombra: 0 5px 20px rgba(20, 43, 74, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--gris-fondo);
+    color: var(--texto-principal);
+    line-height: 1.6;
+}
+
+main {
+    flex: 1;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* =====================================================
+   2. BARRA DE NAVEGACIÓN
+===================================================== */
+
+.navbar {
+    background-color: var(--azul-oscuro) !important;
+    padding: 14px 0;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    color: var(--blanco) !important;
+}
+
+.navbar-brand:hover {
+    color: #a9d4ff !important;
+}
+
+.nav-link {
+    color: #dce8f5 !important;
+    margin-left: 8px;
+    padding: 8px 12px !important;
+    border-radius: 6px;
+    transition: 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--blanco) !important;
+    background-color: rgba(255, 255, 255, 0.13);
+}
+
+/* =====================================================
+   3. TÍTULOS Y TEXTOS
+===================================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    color: var(--azul-oscuro);
+    line-height: 1.3;
+}
+
+h1 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+}
+
+p {
+    color: var(--texto-principal);
+}
+
+.text-secondary {
+    color: var(--gris-texto) !important;
+}
+
+/* =====================================================
+   4. SECCIÓN PRINCIPAL DEL INICIO
+===================================================== */
+
+.hero-section {
+    padding: 75px 0;
+    background: linear-gradient(135deg, #eaf3fc, #ffffff);
+}
+
+.hero-section h1 {
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.hero-section p {
+    font-size: 1.1rem;
+    color: #52657b;
+}
+
+.hero-card {
+    background-color: var(--blanco);
+    padding: 35px;
+    border-radius: 18px;
+    box-shadow: var(--sombra);
+    border: 1px solid var(--gris-borde);
+}
+
+.hero-card h2 {
+    font-weight: bold;
+}
+
+.cta-section {
+    background: linear-gradient(135deg, #e7f1fc, #f8fbff);
+    border: 1px solid #d7e7f8;
+    margin-bottom: 25px;
+}
+
+.cta-section h2 {
+    margin-bottom: 12px;
+}
+
+/* =====================================================
+   5. BOTONES
+===================================================== */
+
+.btn {
+    border-radius: 8px;
+    padding: 10px 18px;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+.btn-primary {
+    background-color: var(--azul-principal);
+    border-color: var(--azul-principal);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: var(--azul-hover);
+    border-color: var(--azul-hover);
+}
+
+.btn-outline-primary {
+    color: var(--azul-principal);
+    border-color: var(--azul-principal);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--azul-principal);
+    border-color: var(--azul-principal);
+}
+
+.btn:focus,
+.form-control:focus,
+.form-select:focus,
+.form-check-input:focus {
+    box-shadow: 0 0 0 0.2rem rgba(23, 105, 170, 0.18);
+}
+
+/* =====================================================
+   6. TARJETAS DE SERVICIOS
+===================================================== */
+
+.service-card {
+    background-color: var(--blanco);
+    border: 1px solid var(--gris-borde);
+    box-shadow: var(--sombra);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(20, 43, 74, 0.13);
+}
+
+.service-card h3 {
+    margin-bottom: 12px;
+}
+
+.service-card p {
+    color: var(--gris-texto);
+    margin-bottom: 0;
+}
+
+.service-icon {
+    font-size: 2.5rem;
+}
+
+/* =====================================================
+   7. TARJETAS DE INFORMACIÓN
+===================================================== */
+
+.about-card {
+    background-color: var(--blanco);
+    border: 1px solid var(--gris-borde);
+    box-shadow: var(--sombra);
+}
+
+.about-card h3 {
+    margin-bottom: 15px;
+}
+
+.about-card p,
+.about-card li {
+    color: var(--gris-texto);
+}
+
+.about-card ul {
+    padding-left: 22px;
+}
+
+.about-card li {
+    margin-bottom: 8px;
+}
+
+/* =====================================================
+   8. FORMULARIOS
+===================================================== */
+
+.form-container {
+    width: 100%;
+    max-width: 650px;
+    padding: 35px;
+    background-color: var(--blanco);
+    border: 1px solid var(--gris-borde);
+    border-radius: 14px;
+    box-shadow: var(--sombra);
+}
+
+.login-container {
+    max-width: 480px;
+}
+
+.solicitud-container {
+    max-width: 800px;
+}
+
+.form-container h1 {
+    margin-bottom: 10px;
+}
+
+.form-container hr {
+    border-color: var(--gris-borde);
+    opacity: 1;
+    margin: 25px 0;
+}
+
+.form-label {
+    color: var(--azul-oscuro);
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+
+.form-control,
+.form-select {
+    min-height: 43px;
+    border: 1px solid var(--gris-borde);
+    border-radius: 7px;
+    color: var(--texto-principal);
+    background-color: var(--blanco);
+}
+
+.form-control::placeholder {
+    color: #a0aab7;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--azul-principal);
+}
+
+textarea.form-control {
+    min-height: 110px;
+    resize: vertical;
+}
+
+.form-check {
+    margin-bottom: 10px;
+}
+
+.form-check-input {
+    border-color: #aebccc;
+}
+
+.form-check-input:checked {
+    background-color: var(--azul-principal);
+    border-color: var(--azul-principal);
+}
+
+.form-check-label {
+    color: var(--texto-principal);
+}
+
+.form-container a {
+    color: var(--azul-principal);
+    font-weight: 600;
+}
+
+.form-container a:hover {
+    color: var(--azul-hover);
+    text-decoration: underline;
+}
+
+/* =====================================================
+   9. MENSAJES DE VALIDACIÓN
+===================================================== */
+
+.invalid-feedback {
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.form-control.is-invalid,
+.form-select.is-invalid {
+    border-color: var(--rojo);
+    background-image: none;
+}
+
+.form-control.is-valid,
+.form-select.is-valid {
+    border-color: var(--verde);
+    background-image: none;
+}
+
+.form-check-input.is-invalid {
+    border-color: var(--rojo);
+}
+
+.form-check-input.is-valid {
+    border-color: var(--verde);
+}
+
+/* =====================================================
+   10. PANELES Y ESTADÍSTICAS
+===================================================== */
+
+.dashboard-header {
+    padding: 25px;
+    background: linear-gradient(135deg, #eaf3fc, #ffffff);
+    border-radius: 12px;
+    border: 1px solid var(--gris-borde);
+}
+
+.dashboard-card {
+    background-color: var(--blanco);
+    border: 1px solid var(--gris-borde);
+    box-shadow: var(--sombra);
+    border-left: 4px solid var(--azul-principal) !important;
+}
+
+.dashboard-card h2 {
+    margin-bottom: 10px;
+}
+
+.dashboard-card p {
+    color: var(--azul-oscuro);
+}
+
+.dashboard-card:hover {
+    transform: translateY(-2px);
+    transition: 0.2s ease;
+}
+
+/* =====================================================
+   11. TABLAS
+===================================================== */
+
+.table-container {
+    border: 1px solid var(--gris-borde);
+    box-shadow: var(--sombra);
+}
+
+.table {
+    margin-bottom: 0;
+    vertical-align: middle;
+}
+
+.table thead th {
+    white-space: nowrap;
+    font-size: 0.9rem;
+    padding: 13px;
+}
+
+.table tbody td {
+    padding: 12px;
+    font-size: 0.9rem;
+}
+
+.table-dark {
+    --bs-table-bg: var(--azul-oscuro);
+    --bs-table-border-color: #314966;
+}
+
+.table tbody tr:hover {
+    background-color: #f0f6fc;
+}
+
+.table-responsive {
+    border-radius: 6px;
+}
+
+/* =====================================================
+   12. ESTADOS DE SOLICITUDES
+===================================================== */
+
+.badge {
+    padding: 7px 10px;
+    border-radius: 6px;
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+/* =====================================================
+   13. MODALES
+===================================================== */
+
+.modal-content {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.modal-header {
+    background-color: var(--azul-oscuro);
+}
+
+.modal-title {
+    color: var(--blanco);
+    font-weight: bold;
+}
+
+.modal-body {
+    padding: 25px;
+}
+
+.modal-footer {
+    border-top: 1px solid var(--gris-borde);
+}
+
+/* =====================================================
+   14. BUSCADOR Y FILTROS
+===================================================== */
+
+#buscarSolicitud,
+#filtrarEstado {
+    min-height: 43px;
+}
+
+#buscarSolicitud:focus,
+#filtrarEstado:focus {
+    border-color: var(--azul-principal);
+}
+
+/* =====================================================
+   15. PIE DE PÁGINA
+===================================================== */
+
+footer {
+    margin-top: auto;
+    background-color: var(--azul-oscuro) !important;
+    color: var(--blanco);
+    padding: 18px 10px !important;
+}
+
+footer p {
+    color: #dce8f5;
+    font-size: 0.9rem;
+}
+
+/* =====================================================
+   16. SWEETALERT2
+===================================================== */
+
+.swal2-popup {
+    border-radius: 14px !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+
+.swal2-title {
+    color: var(--azul-oscuro) !important;
+}
+
+.swal2-confirm {
+    background-color: var(--azul-principal) !important;
+    border-radius: 7px !important;
+}
+
+.swal2-cancel {
+    border-radius: 7px !important;
+}
+
+/* =====================================================
+   17. RESPONSIVE - TABLETS
+===================================================== */
+
+@media (max-width: 991px) {
+
+    .navbar-nav {
+        padding-top: 12px;
+    }
+
+    .nav-link {
+        margin-left: 0;
+        margin-top: 3px;
+    }
+
+    .hero-section {
+        padding: 50px 0;
+    }
+
+    .form-container {
+        padding: 28px;
+    }
+
+}
+
+/* =====================================================
+   18. RESPONSIVE - CELULARES
+===================================================== */
+
+@media (max-width: 576px) {
+
+    body {
+        font-size: 0.95rem;
+    }
+
+    .hero-section {
+        padding: 40px 0;
+    }
+
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    .hero-card {
+        padding: 22px;
+    }
+
+    .form-container {
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .dashboard-header {
+        padding: 20px;
+    }
+
+    .dashboard-card {
+        padding: 18px !important;
+    }
+
+    .dashboard-card .display-6 {
+        font-size: 2rem;
+    }
+
+    .cta-section {
+        padding: 22px !important;
+    }
+
+    .cta-section .btn {
+        width: 100%;
+        margin: 5px 0 !important;
+    }
+
+    .table thead th,
+    .table tbody td {
+        font-size: 0.82rem;
+        padding: 9px;
+    }
+
+    .modal-body {
+        padding: 18px;
+    }
+
+}
+
+/* =====================================================
+   19. ACCESIBILIDAD Y TRANSICIONES
+===================================================== */
+
+button,
+a,
+input,
+select,
+textarea {
+    transition: border-color 0.2s ease,
+                background-color 0.2s ease,
+                color 0.2s ease;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.65;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
+
+/* Altura mínima usada en la portada */
+.min-vh-75 {
+    min-height: 75vh;
+}
+/* Altura mínima usada en la portada */
+.min-vh-75 {
+    min-height: 75vh;
+}

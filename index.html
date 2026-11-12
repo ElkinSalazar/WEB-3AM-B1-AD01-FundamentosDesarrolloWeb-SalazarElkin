@@ -1,0 +1,912 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AutoCare | Mantenimiento Automotriz</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Estilos del proyecto -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+        :root {
+            --ac-primary: #2563eb;
+            --ac-secondary: #0f172a;
+            --ac-accent: #38bdf8;
+            --ac-light: #f1f5f9;
+        }
+
+        body {
+            background: #f8fafc;
+            color: #1e293b;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        /* NAVBAR */
+
+        .navbar-autocare {
+            background: rgba(15, 23, 42, 0.97);
+            padding: 16px 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .navbar-brand {
+            font-size: 1.55rem;
+            letter-spacing: -1px;
+        }
+
+        .brand-icon {
+            color: var(--ac-accent);
+        }
+
+        .navbar-autocare .nav-link {
+            color: #cbd5e1;
+            margin: 0 8px;
+            transition: 0.3s;
+        }
+
+        .navbar-autocare .nav-link:hover {
+            color: white;
+        }
+
+        .btn-login {
+            border: 1px solid #64748b;
+            color: white;
+            border-radius: 9px;
+            padding: 9px 19px;
+        }
+
+        .btn-login:hover {
+            background: white;
+            color: var(--ac-secondary);
+        }
+
+        .btn-register {
+            background: var(--ac-primary);
+            color: white;
+            border-radius: 9px;
+            padding: 10px 19px;
+            font-weight: 600;
+        }
+
+        .btn-register:hover {
+            background: #1d4ed8;
+            color: white;
+        }
+
+        /* HERO */
+
+        .hero {
+            position: relative;
+            overflow: hidden;
+            padding: 100px 0 110px;
+            color: white;
+            background:
+                radial-gradient(circle at 85% 25%, rgba(56, 189, 248, 0.22), transparent 28%),
+                linear-gradient(120deg, #0f172a 0%, #172554 55%, #1e40af 100%);
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 380px;
+            height: 380px;
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 50%;
+            right: -100px;
+            bottom: -180px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-label {
+            display: inline-block;
+            background: rgba(56, 189, 248, 0.13);
+            color: #7dd3fc;
+            border: 1px solid rgba(125, 211, 252, 0.25);
+            border-radius: 30px;
+            padding: 8px 16px;
+            font-size: 0.9rem;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4.2rem);
+            font-weight: 800;
+            line-height: 1.12;
+            letter-spacing: -2px;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 span {
+            color: #38bdf8;
+        }
+
+        .hero-description {
+            max-width: 570px;
+            color: #cbd5e1;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 32px;
+        }
+
+        .btn-hero {
+            background: #2563eb;
+            color: white;
+            padding: 14px 25px;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn-hero:hover {
+            background: #1d4ed8;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .btn-hero-outline {
+            border: 1px solid #94a3b8;
+            color: white;
+            padding: 14px 25px;
+            border-radius: 10px;
+            font-weight: 600;
+        }
+
+        .btn-hero-outline:hover {
+            background: white;
+            color: #0f172a;
+        }
+
+        .hero-visual {
+            position: relative;
+            z-index: 2;
+            min-height: 340px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-car-card {
+            width: 100%;
+            max-width: 440px;
+            min-height: 290px;
+            border-radius: 25px;
+            padding: 35px;
+            background: linear-gradient(145deg,
+                rgba(255,255,255,0.13),
+                rgba(255,255,255,0.04));
+            border: 1px solid rgba(255,255,255,0.15);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.2);
+            backdrop-filter: blur(12px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .car-icon {
+            font-size: 115px;
+            color: #7dd3fc;
+            filter: drop-shadow(0 10px 20px rgba(56,189,248,0.25));
+        }
+
+        .hero-car-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-top: 15px;
+        }
+
+        .hero-car-card p {
+            color: #cbd5e1;
+            margin-bottom: 0;
+        }
+
+        /* SECCIONES */
+
+        .section-padding {
+            padding: 85px 0;
+        }
+
+        .section-title {
+            font-weight: 800;
+            color: #0f172a;
+            letter-spacing: -1px;
+        }
+
+        .section-subtitle {
+            color: #64748b;
+            max-width: 650px;
+            margin: 12px auto 0;
+            line-height: 1.7;
+        }
+
+        /* SERVICIOS */
+
+        .service-card {
+            background: white;
+            padding: 30px 25px;
+            border-radius: 17px;
+            height: 100%;
+            border: 1px solid #e2e8f0;
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 15px 35px rgba(15, 23, 42, 0.09);
+            border-color: #bfdbfe;
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #eff6ff;
+            color: #2563eb;
+            font-size: 27px;
+            margin-bottom: 22px;
+        }
+
+        .service-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            color: #64748b;
+            line-height: 1.7;
+            margin-bottom: 0;
+        }
+
+        /* VENTAJAS */
+
+        .advantages {
+            background: #eef4fb;
+        }
+
+        .advantage-item {
+            display: flex;
+            gap: 18px;
+            margin-bottom: 28px;
+        }
+
+        .advantage-icon {
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            color: #2563eb;
+            border-radius: 13px;
+            font-size: 22px;
+            box-shadow: 0 4px 12px rgba(15,23,42,0.05);
+        }
+
+        .advantage-item h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        .advantage-item p {
+            color: #64748b;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* CTA */
+
+        .cta-section {
+            padding: 75px 0;
+            background: linear-gradient(110deg, #1e40af, #2563eb);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-weight: 800;
+            font-size: clamp(1.8rem, 4vw, 2.7rem);
+            margin-bottom: 16px;
+        }
+
+        .cta-section p {
+            color: #dbeafe;
+            max-width: 650px;
+            margin: 0 auto 27px;
+            line-height: 1.7;
+        }
+
+        .btn-cta {
+            background: white;
+            color: #1d4ed8;
+            padding: 14px 27px;
+            border-radius: 10px;
+            font-weight: 700;
+        }
+
+        .btn-cta:hover {
+            background: #e2e8f0;
+            color: #1e40af;
+        }
+
+        /* FOOTER */
+
+        .footer {
+            background: #0f172a;
+            color: #cbd5e1;
+            padding: 45px 0 20px;
+        }
+
+        .footer h3 {
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .footer a {
+            display: inline-block;
+            color: #cbd5e1;
+            text-decoration: none;
+            margin-bottom: 10px;
+            transition: 0.2s;
+        }
+
+        .footer a:hover {
+            color: #38bdf8;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #334155;
+            margin-top: 30px;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 991px) {
+            .hero {
+                padding: 75px 0;
+                text-align: center;
+            }
+
+            .hero-description {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-visual {
+                margin-top: 45px;
+            }
+
+            .navbar-nav {
+                padding-top: 15px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                letter-spacing: -1px;
+            }
+
+            .section-padding {
+                padding: 60px 0;
+            }
+
+            .hero-car-card {
+                min-height: 250px;
+            }
+
+            .car-icon {
+                font-size: 90px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVEGACIÓN -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-autocare">
+        <div class="container">
+
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="bi bi-car-front-fill brand-icon me-2"></i>
+                AutoCare
+            </a>
+
+            <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#menuPrincipal"
+                    aria-controls="menuPrincipal"
+                    aria-expanded="false"
+                    aria-label="Abrir navegación">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menuPrincipal">
+
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">
+                            Inicio
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/acerca.html">
+                            Acerca de
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/servicios.html">
+                            Servicios
+                        </a>
+                    </li>
+
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-login" href="pages/login.html">
+                            Iniciar sesión
+                        </a>
+                    </li>
+
+                    <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+                        <a class="btn btn-register" href="pages/registro.html">
+                            Registrarse
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- PRESENTACIÓN PRINCIPAL -->
+    <header class="hero">
+
+        <div class="container">
+            <div class="row align-items-center">
+
+                <div class="col-lg-7 hero-content">
+
+                    <div class="hero-label">
+                        <i class="bi bi-stars me-2"></i>
+                        Cuidado y mantenimiento para tu vehículo
+                    </div>
+
+                    <h1>
+                        Tu vehículo merece
+                        <span>el mejor cuidado.</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        En AutoCare te ayudamos a mantener tu vehículo
+                        en excelentes condiciones. Solicita tus servicios
+                        de mantenimiento de manera rápida, sencilla y segura.
+                    </p>
+
+                    <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
+
+                        <a href="pages/login.html" class="btn btn-hero">
+                            Solicitar mantenimiento
+                            <i class="bi bi-arrow-right ms-2"></i>
+                        </a>
+
+                        <a href="pages/servicios.html" class="btn btn-hero-outline">
+                            Conocer servicios
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-5">
+
+                    <div class="hero-visual">
+
+                        <div class="hero-car-card">
+
+                            <i class="bi bi-car-front-fill car-icon"></i>
+
+                            <h3>Conduce con tranquilidad</h3>
+
+                            <p>
+                                Nosotros te ayudamos a cuidar tu vehículo.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </header>
+
+
+    <!-- SERVICIOS DESTACADOS -->
+    <section class="section-padding">
+
+        <div class="container">
+
+            <div class="text-center mb-5">
+
+                <span class="text-primary fw-semibold">
+                    NUESTROS SERVICIOS
+                </span>
+
+                <h2 class="section-title mt-2">
+                    Todo lo que tu vehículo necesita
+                </h2>
+
+                <p class="section-subtitle">
+                    Contamos con diferentes servicios para ayudarte a
+                    conservar el rendimiento, seguridad y funcionamiento
+                    de tu automóvil.
+                </p>
+
+            </div>
+
+            <div class="row g-4">
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="service-card">
+
+                        <div class="service-icon">
+                            <i class="bi bi-droplet-half"></i>
+                        </div>
+
+                        <h3>Cambio de aceite</h3>
+
+                        <p>
+                            Mantén el motor de tu vehículo protegido
+                            mediante un cambio de aceite oportuno.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="service-card">
+
+                        <div class="service-icon">
+                            <i class="bi bi-disc"></i>
+                        </div>
+
+                        <h3>Revisión de frenos</h3>
+
+                        <p>
+                            Comprueba el estado de los frenos y mejora
+                            la seguridad durante tus recorridos.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="service-card">
+
+                        <div class="service-icon">
+                            <i class="bi bi-gear-wide-connected"></i>
+                        </div>
+
+                        <h3>Alineación y balanceo</h3>
+
+                        <p>
+                            Ayuda a mejorar la estabilidad del vehículo
+                            y el desgaste de los neumáticos.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="service-card">
+
+                        <div class="service-icon">
+                            <i class="bi bi-search"></i>
+                        </div>
+
+                        <h3>Diagnóstico general</h3>
+
+                        <p>
+                            Identifica posibles inconvenientes y conoce
+                            el estado general de tu automóvil.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="service-card">
+
+                        <div class="service-icon">
+                            <i class="bi bi-tools"></i>
+                        </div>
+
+                        <h3>Mantenimiento preventivo</h3>
+
+                        <p>
+                            Realiza revisiones periódicas para prevenir
+                            problemas y prolongar la vida útil del vehículo.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="service-card">
+
+                        <div class="service-icon">
+                            <i class="bi bi-battery-charging"></i>
+                        </div>
+
+                        <h3>Revisión de batería</h3>
+
+                        <p>
+                            Verifica el estado de la batería y el sistema
+                            eléctrico de tu automóvil.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="text-center mt-5">
+
+                <a href="pages/servicios.html" class="btn btn-primary px-4 py-3">
+                    Ver todos los servicios
+                    <i class="bi bi-arrow-right ms-2"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- VENTAJAS -->
+    <section class="advantages section-padding">
+
+        <div class="container">
+
+            <div class="row align-items-center">
+
+                <div class="col-lg-5 mb-5 mb-lg-0">
+
+                    <span class="text-primary fw-semibold">
+                        ¿POR QUÉ ELEGIR AUTOCARE?
+                    </span>
+
+                    <h2 class="section-title mt-3 mb-3">
+                        Cuidar tu vehículo nunca fue tan sencillo.
+                    </h2>
+
+                    <p class="text-secondary">
+                        Nuestra plataforma te permite gestionar tus
+                        solicitudes de mantenimiento desde un solo lugar,
+                        sin complicaciones.
+                    </p>
+
+                    <a href="pages/acerca.html"
+                       class="btn btn-primary mt-3 px-4 py-3">
+                        Conoce más sobre nosotros
+                    </a>
+
+                </div>
+
+                <div class="col-lg-6 offset-lg-1">
+
+                    <div class="advantage-item">
+
+                        <div class="advantage-icon">
+                            <i class="bi bi-calendar-check"></i>
+                        </div>
+
+                        <div>
+                            <h3>Solicitudes sencillas</h3>
+                            <p>
+                                Registra tus mantenimientos mediante
+                                un formulario fácil de utilizar.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="advantage-item">
+
+                        <div class="advantage-icon">
+                            <i class="bi bi-clipboard-data"></i>
+                        </div>
+
+                        <div>
+                            <h3>Seguimiento de solicitudes</h3>
+                            <p>
+                                Consulta el estado de tus solicitudes
+                                y mantente informado sobre su atención.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="advantage-item">
+
+                        <div class="advantage-icon">
+                            <i class="bi bi-person-check"></i>
+                        </div>
+
+                        <div>
+                            <h3>Acceso personalizado</h3>
+                            <p>
+                                Cada cliente puede consultar su perfil
+                                y sus propios registros.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="advantage-item">
+
+                        <div class="advantage-icon">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+
+                        <div>
+                            <h3>Gestión organizada</h3>
+                            <p>
+                                Administra la información de tus vehículos
+                                y servicios desde una misma plataforma.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- LLAMADO A LA ACCIÓN -->
+    <section class="cta-section">
+
+        <div class="container">
+
+            <h2>¡Empieza a cuidar tu vehículo hoy!</h2>
+
+            <p>
+                Regístrate en AutoCare y gestiona tus solicitudes
+                de mantenimiento de forma rápida y organizada.
+            </p>
+
+            <a href="pages/registro.html" class="btn btn-cta">
+                Crear mi cuenta
+                <i class="bi bi-arrow-right ms-2"></i>
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="row g-4">
+
+                <div class="col-md-5">
+
+                    <h3>
+                        <i class="bi bi-car-front-fill text-info me-2"></i>
+                        AutoCare
+                    </h3>
+
+                    <p>
+                        Plataforma de gestión de servicios de
+                        mantenimiento automotriz. Nos enfocamos en
+                        facilitar la organización y seguimiento de
+                        tus solicitudes.
+                    </p>
+
+                </div>
+
+                <div class="col-md-3">
+
+                    <h3>Enlaces rápidos</h3>
+
+                    <a href="index.html">Inicio</a><br>
+                    <a href="pages/acerca.html">Acerca de</a><br>
+                    <a href="pages/servicios.html">Servicios</a><br>
+                    <a href="pages/login.html">Iniciar sesión</a>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <h3>Tu vehículo, nuestra prioridad</h3>
+
+                    <p>
+                        Mantén tu automóvil en buenas condiciones
+                        con una gestión sencilla de tus servicios.
+                    </p>
+
+                    <a href="pages/registro.html">
+                        Comenzar ahora
+                        <i class="bi bi-arrow-up-right ms-1"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+
+                © 2026 AutoCare. Todos los derechos reservados.
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.14.5/dist/sweetalert2.all.min.js"></script>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>
